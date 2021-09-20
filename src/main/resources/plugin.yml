@@ -1,0 +1,13 @@
+name: 'TypeGame'
+description: 'Minecraft Type Game Plugin'
+version: '0.9'
+main: tk.gomq.typegame.TypeGame
+author: GomQ
+api-version: 1.16
+commands:
+  typegame:
+    usage: /typegame start (content)
+    description: Start Typegame
+  adduser:
+    usage: /mystat [add/remove]
+    description: Add User to Typegame
