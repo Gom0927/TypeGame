@@ -9,6 +9,7 @@ import tk.gomq.typegame.Commands.MyStat;
 import tk.gomq.typegame.Listener.PlayerChatListener;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Objects;
 
 public class TypeGame extends JavaPlugin {
@@ -18,8 +19,8 @@ public class TypeGame extends JavaPlugin {
     public static long gameTime = 0;
     public static String Content = null;
 
-    private Player[] llllllllllllll = new Player[Integer.MAX_VALUE];
-    public static ArrayList<Player> List = new ArrayList<>();
+    private static final Player[] lll = new Player[Integer.MAX_VALUE];
+    public static ArrayList<Player> List = new ArrayList<>(Arrays.asList(lll));
 
     @Override
     public void onEnable() {
