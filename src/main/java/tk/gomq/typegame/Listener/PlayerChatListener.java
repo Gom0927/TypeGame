@@ -27,7 +27,7 @@ public class PlayerChatListener implements Listener {
                 x.resetTitle();
                 x.sendTitle(
                         ChatColor.GREEN+player.getDisplayName()+" Correct!",
-                        ChatColor.BLUE+"Time: "+ChatColor.YELLOW+(((new Date().getTime()-gameTime))/1000)+"s",
+                        ChatColor.BLUE+"Time: "+ChatColor.YELLOW+((float)((new Date().getTime()-gameTime))/1000)+"s",
                         1, 50, 1);
             }
             player.sendMessage(ChatColor.BLUE + "Input new TypeGame content with /typegame start command!");
