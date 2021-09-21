@@ -56,12 +56,15 @@ public class GameStart implements CommandExecutor, TabCompleter {
         return false;
     }
 
+
     @Override
     public java.util.List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args) {
         ArrayList<String> list = new ArrayList<String>();
-        list.add("add");
-        list.add("remove");
-        list.add("list");
+        if(args.length == 1) {
+            list.add("start");
+        } else if(args.length == 2) {
+            list.add("<[content]>");
+        }
 
         return list;
     }
