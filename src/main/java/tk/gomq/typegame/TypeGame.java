@@ -17,6 +17,8 @@ public class TypeGame extends JavaPlugin {
     public static boolean onGame = false;
     public static long gameTime = 0;
     public static String Content = null;
+
+    private Player[] llllllllllllll = new Player[Integer.MAX_VALUE];
     public static ArrayList<Player> List = new ArrayList<>();
 
     @Override

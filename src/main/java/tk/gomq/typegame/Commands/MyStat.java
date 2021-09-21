@@ -6,9 +6,6 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
 import static tk.gomq.typegame.TypeGame.List;
 import static tk.gomq.typegame.TypeGame.onGame;
 
