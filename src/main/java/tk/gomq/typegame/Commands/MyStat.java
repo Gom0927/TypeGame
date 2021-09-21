@@ -18,7 +18,9 @@ public class MyStat implements CommandExecutor {
 
         if(args.length==1) {
             String w_h_a_t = args[0];
-            if(w_h_a_t.equalsIgnoreCase("add") || w_h_a_t.equalsIgnoreCase("remove")) {
+            if(w_h_a_t.equalsIgnoreCase("add")
+                    || w_h_a_t.equalsIgnoreCase("remove")
+                    || w_h_a_t.equalsIgnoreCase("list")) {
                 if(onGame) {
                     sender.sendMessage(ChatColor.RED + "The game is currently in progress. Please try again later.");
                     return false;
@@ -27,7 +29,13 @@ public class MyStat implements CommandExecutor {
                 if(w_h_a_t.equalsIgnoreCase("add")) {
                     List.add((Player)sender);
                     sender.sendMessage(ChatColor.GREEN + "Successfully added you to Player List!");
-                } else {
+                } else if (w_h_a_t.equalsIgnoreCase("list")) {
+                    ((Player)sender).sendMessage(ChatColor.GREEN + "List of TypeGame Players");
+                    for(Player i : List) {
+                        ((Player)sender).sendMessage(i.getDisplayName());
+                    }
+                }
+                else {
                     List.remove((Player)sender);
                     sender.sendMessage(ChatColor.GREEN + "Successfully removed you from Player List!");
                 }

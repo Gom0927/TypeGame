@@ -25,10 +25,15 @@ public class PlayerChatListener implements Listener {
         if (msg.equals(Content)) {
             for(Player x : List) {
                 x.resetTitle();
-                x.sendTitle(player.getDisplayName()+" Correct!", "Time: "+(new Date().getTime()-gameTime)+"ms", 1, 5, 1);
+                x.sendTitle(
+                        ChatColor.GREEN+player.getDisplayName()+" Correct!",
+                        ChatColor.BLUE+"Time: "+ChatColor.YELLOW+(((new Date().getTime()-gameTime))/1000)+"s",
+                        1, 50, 1);
             }
             player.sendMessage(ChatColor.BLUE + "Input new TypeGame content with /typegame start command!");
             onGame=false;
+        } else {
+            player.sendMessage(ChatColor.RED + "Wrorg!");
         }
     }
 }

@@ -29,12 +29,20 @@ public class GameStart implements CommandExecutor {
 //                    ((Player)sender).sendMessage("There must be at least 3 users to play the game!");
 //                    return false;
 //                }
+                if (!List.contains((Player)sender)) {
+                    sender.sendMessage(ChatColor.RED + "You are not in the players group");
+                    return false;
+                }
 
                 onGame = true;
                 Content = content;
 
                 for(Player x : List) {
-                    x.sendTitle(content, "Executor: "+((Player) sender).getDisplayName(), 1, TITLE_TIME, 1);
+
+                    x.sendTitle(
+                            ChatColor.AQUA + content,
+                            ChatColor.GOLD +"Executor: "+((Player) sender).getDisplayName(),
+                            1, TITLE_TIME, 1);
                 }
                 gameTime = new Date().getTime();
                 return true;
