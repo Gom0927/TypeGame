@@ -1,6 +1,6 @@
 name: 'TypeGame'
 description: 'Minecraft Type Game Plugin'
-version: '0.9'
+version: '0.9.1'
 main: tk.gomq.typegame.TypeGame
 author: GomQ
 api-version: 1.16

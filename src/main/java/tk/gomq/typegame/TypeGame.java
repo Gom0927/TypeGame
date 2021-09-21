@@ -9,6 +9,7 @@ import tk.gomq.typegame.Commands.MyStat;
 import tk.gomq.typegame.Listener.PlayerChatListener;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class TypeGame extends JavaPlugin {
     public static final int TITLE_TIME = 60;
@@ -22,8 +23,8 @@ public class TypeGame extends JavaPlugin {
     public void onEnable() {
         Bukkit.broadcastMessage(ChatColor.GREEN + "[CHATGAME] ChatGame Plugin Enabled!");
 
-        getCommand("typegame").setExecutor(new GameStart());
-        getCommand("mystat").setExecutor(new MyStat());
+        Objects.requireNonNull(getCommand("typegame")).setExecutor(new GameStart());
+        Objects.requireNonNull(getCommand("mystat")).setExecutor(new MyStat());
         Bukkit.getPluginManager().registerEvents(new PlayerChatListener(), this);
     }
     @Override
