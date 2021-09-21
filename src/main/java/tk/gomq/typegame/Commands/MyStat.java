@@ -4,12 +4,15 @@ import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
+
+import java.util.ArrayList;
 
 import static tk.gomq.typegame.TypeGame.List;
 import static tk.gomq.typegame.TypeGame.onGame;
 
-public class MyStat implements CommandExecutor {
+public class MyStat implements CommandExecutor, TabCompleter {
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if(!(sender instanceof Player)) {
             sender.sendMessage(ChatColor.RED + "This command need to executed by Human!");
@@ -49,5 +52,17 @@ public class MyStat implements CommandExecutor {
             sender.sendMessage(ChatColor.RED + "Usage: /mystat [add/remove]");
             return false;
         }
+    }
+
+    @Override
+    public java.util.List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args) {
+        ArrayList<String> list = new ArrayList<String>();
+        if(args.length == 1) {
+            list.add("start");
+        } else if(args.length == 2) {
+            list.add("<[content]>");
+        }
+
+        return list;
     }
 }
