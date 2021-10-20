@@ -1,4 +1,5 @@
 [![Latest Release](https://img.shields.io/github/v/release/Gom0927/TypeGame)](https://github.com/Gom0927/TypeGame/releases/latest)
+![GitHub](https://img.shields.io/github/license/Gom0927/TypeGame)
 
 # TypeGame
 
